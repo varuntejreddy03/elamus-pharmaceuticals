@@ -19,12 +19,12 @@ export default function Navbar() {
     <>
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999, backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container-custom">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <img src="/images/products/logo.webp" alt="Elamus" className="h-10 w-10 rounded-xl object-contain" />
+          <div className="flex h-[72px] items-center justify-between">
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/images/products/logo.webp" alt="Elamus" className="h-12 w-12 rounded-2xl object-contain shadow-sm sm:h-14 sm:w-14" />
               <div>
-                <span className="block text-sm font-extrabold leading-tight text-slate-900 sm:text-[15px]">Elamus</span>
-                <span className="block text-[9px] font-bold uppercase tracking-[0.12em] text-sky-600">Pharmaceuticals</span>
+                <span className="block text-xl font-extrabold leading-tight text-slate-900 sm:text-2xl">Elamus</span>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.12em] text-sky-600 sm:text-[11px]">Pharmaceuticals</span>
               </div>
             </Link>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-      <div style={{ height: '64px' }} />
+      <div style={{ height: '72px' }} />
     </>
   );
 }

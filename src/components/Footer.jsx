@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="container-custom py-10 md:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <div className="mb-4 flex items-center gap-2.5">
-              <img src="/images/products/logo.webp" alt="Elamus" className="h-10 w-10 rounded-xl" />
+            <div className="mb-4 flex items-center gap-3">
+              <img src="/images/products/logo.webp" alt="Elamus" className="h-14 w-14 rounded-2xl shadow-md" />
               <div>
-                <span className="block text-sm font-extrabold text-white">Elamus</span>
-                <span className="block text-[9px] font-bold uppercase tracking-wider text-sky-400">Pharmaceuticals</span>
+                <span className="block text-xl font-extrabold text-white">Elamus</span>
+                <span className="block text-[10px] font-bold uppercase tracking-wider text-sky-400">Pharmaceuticals Pvt. Ltd.</span>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-300">Presenting pharmaceutical products through clear catalogue information and easy enquiry support since 2022.</p>

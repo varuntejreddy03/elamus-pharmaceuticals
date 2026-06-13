@@ -406,7 +406,56 @@ const products = [
     alt: "Zevilval M Tab product packaging",
     description: "Zevilval M Tab product image for website catalogue display. Please verify product spelling, composition, and usage details before publishing.",
     category: "Tablets"
+  },
+  {
+    name: "Ogliroc MV 3.3",
+    slug: "ogliroc-mv-3-3",
+    image: "/images/products/ogliroc-mv-2-3-c.webp",
+    alt: "Ogliroc MV 3.3 product packaging",
+    description: "Ogliroc MV 3.3 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Linamagnut E25",
+    slug: "linamagnut-e25",
+    image: "/images/products/linamagnut-m.webp",
+    alt: "Linamagnut E25 product packaging",
+    description: "Linamagnut E25 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Tydaproz GM2",
+    slug: "tydaproz-gm2",
+    image: "/images/products/tydaproz-gm1.webp",
+    alt: "Tydaproz GM2 product packaging",
+    description: "Tydaproz GM2 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Ogliroc MV 3.3",
+    slug: "ogliroc-mv-3-3",
+    image: "/images/products/ogliroc-mv-3-3.webp",
+    alt: "Ogliroc MV 3.3 product packaging",
+    description: "Ogliroc MV 3.3 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Linamagnut E25",
+    slug: "linamagnut-e25",
+    image: "/images/products/linamagnut-e25.webp",
+    alt: "Linamagnut E25 product packaging",
+    description: "Linamagnut E25 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Tydaproz GM2",
+    slug: "tydaproz-gm2",
+    image: "/images/products/tydaproz-gm2.webp",
+    alt: "Tydaproz GM2 product packaging",
+    description: "Tydaproz GM2 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
+    category: "Tablets"
   }
 ];
 
 export default products;
+

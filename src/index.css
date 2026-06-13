@@ -55,3 +55,28 @@
     @apply rounded-2xl border border-white/60 bg-white/80 p-4 shadow-lg backdrop-blur-lg;
   }
 }
+
+/* Infinite scrolling animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-scroll-left {
+  animation: scroll-left 25s linear infinite;
+}
+.animate-scroll-right {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* Subtle pulse for CTA */
+@keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(7, 152, 208, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(7, 152, 208, 0); }
+}
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
