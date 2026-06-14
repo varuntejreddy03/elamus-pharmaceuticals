@@ -10,12 +10,8 @@ export default function About() {
       <section className="relative overflow-hidden py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%)' }}>
         <div className="container-custom relative">
           <motion.div initial="hidden" animate="visible" variants={fade} className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 flex items-center justify-center gap-4">
-              <img src="/images/products/logo.webp" alt="Elamus" className="h-16 w-16 rounded-2xl shadow-md sm:h-20 sm:w-20" />
-              <div className="text-left">
-                <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">Elamus Pharmaceuticals</h2>
-                <span className="text-sm font-bold uppercase tracking-wider text-sky-600">Pvt. Ltd.</span>
-              </div>
+            <div className="mb-6 flex justify-center">
+              <img src="/images/products/elamus-logo.png" alt="Elamus Pharmaceuticals" className="h-14 w-auto object-contain sm:h-16" />
             </div>
             <span className="eyebrow"><Building2 size={11} /> About Us</span>
             <h1 className="mt-5 section-heading">About Our Company</h1>

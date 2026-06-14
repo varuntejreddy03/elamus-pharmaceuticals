@@ -16,60 +16,70 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-10 pb-12 lg:pt-20 lg:pb-24" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%)' }}>
-        <div className="container-custom relative">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <section className="overflow-hidden pb-8 pt-6 md:pb-16 md:pt-12 lg:pb-24 lg:pt-20" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%)' }}>
+        <div className="container-custom">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
             <motion.div initial="hidden" animate="visible" variants={fadeLeft} transition={{ duration: 0.7 }}>
-              <motion.span className="eyebrow" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}>
-                <Sparkles size={11} /> Product Catalogue
-              </motion.span>
-              <h1 className="mt-5 heading-xl">
-                Trusted Pharmaceutical Products for Better <span className="gradient-text">Healthcare Access</span>
+              <motion.div className="mb-[18px] inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-sky-700 md:px-4 md:py-2 md:text-sm"
+                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}>
+                <Sparkles size={10} className="mr-1.5" /> Product Catalogue
+              </motion.div>
+
+              <h1 className="text-[26px] font-extrabold leading-[1.12] tracking-[-0.02em] text-slate-950 sm:text-[32px] md:text-[40px] lg:text-[48px]">
+                Trusted Pharmaceutical Products for Better{' '}
+                <span className="text-sky-600">Healthcare Access</span>
               </h1>
-              <motion.p className="mt-4 text-[15px] leading-relaxed text-slate-500 sm:text-lg lg:max-w-lg"
+
+              <motion.p className="mt-[18px] text-[14.5px] leading-[1.7] text-slate-600 md:mt-5 md:text-lg md:leading-8 lg:max-w-lg"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
                 Elamus Pharmaceuticals Pvt. Ltd. offers a growing range of pharmaceutical and nutraceutical products with a focus on quality and responsible information.
               </motion.p>
-              <motion.div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+
+              <motion.div className="mt-5 flex flex-col gap-[12px] sm:flex-row md:mt-6"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-                <a href="https://wa.me/917989005105?text=Hello%20Elamus%20Pharmaceuticals%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer" className="primary-btn w-full sm:w-auto animate-pulse-subtle">
-                  <MessageCircle size={16} /> Enquire on WhatsApp
+                <a href="https://wa.me/917989005105?text=Hello%20Elamus%20Pharmaceuticals%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer"
+                  className="flex h-[46px] w-full items-center justify-center gap-2 rounded-xl bg-sky-600 text-[14px] font-bold text-white shadow-sm hover:bg-sky-700 sm:w-auto sm:px-7 animate-pulse-subtle">
+                  <MessageCircle size={15} /> Enquire on WhatsApp
                 </a>
-                <Link to="/products" className="secondary-btn w-full sm:w-auto">Explore Products <ArrowRight size={15} /></Link>
+                <Link to="/products"
+                  className="flex h-[46px] w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white text-[14px] font-bold text-slate-900 shadow-sm hover:border-sky-300 hover:text-sky-600 sm:w-auto sm:px-7">
+                  Explore Products <ArrowRight size={14} />
+                </Link>
               </motion.div>
-              <motion.div className="mt-5 flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-400 sm:text-xs"
+
+              <motion.div className="mt-[18px] flex flex-wrap gap-x-4 gap-y-1.5 text-[12px] font-semibold text-slate-400 md:mt-6 md:text-sm"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
                 {['Catalogue Enquiry', 'Responsible Info', 'Mumbai Based'].map((t, i) => (
                   <motion.span key={t} className="flex items-center gap-1"
-                    initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 + i * 0.15 }}>
-                    <CheckCircle size={12} className="text-sky-500" />{t}
+                    initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 + i * 0.12 }}>
+                    <CheckCircle size={11} className="text-sky-500" />{t}
                   </motion.span>
                 ))}
               </motion.div>
             </motion.div>
 
             {/* Scrolling product showcase */}
-            <motion.div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 to-sky-50 p-6 sm:p-8 lg:p-10"
+            <motion.div className="relative mt-[36px] overflow-hidden rounded-[24px] bg-sky-50/60 p-4 md:mt-0 md:rounded-[28px] md:p-6 lg:p-8"
               initial="hidden" animate="visible" variants={fadeRight} transition={{ duration: 0.7, delay: 0.3 }}>
               {/* Row 1 - scrolls left */}
-              <div className="mb-4 flex animate-scroll-left gap-4">
-                {[...products.slice(0, 8), ...products.slice(0, 8)].map((p, i) => (
-                  <div key={`r1-${i}`} className="flex h-28 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-transform duration-300 hover:scale-105 sm:h-36 sm:w-48">
+              <div className="mb-3 flex animate-scroll-left gap-3 md:mb-4 md:gap-4">
+                {[...products.slice(0, 10), ...products.slice(0, 10)].map((p, i) => (
+                  <div key={`r1-${i}`} className="flex h-[104px] w-[130px] shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm md:h-[140px] md:w-[170px]">
                     <img src={p.image} alt={p.alt} className="h-full w-full object-contain" />
                   </div>
                 ))}
               </div>
               {/* Row 2 - scrolls right */}
-              <div className="flex animate-scroll-right gap-4">
-                {[...products.slice(8, 16), ...products.slice(8, 16)].map((p, i) => (
-                  <div key={`r2-${i}`} className="flex h-28 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-transform duration-300 hover:scale-105 sm:h-36 sm:w-48">
+              <div className="flex animate-scroll-right gap-3 md:gap-4">
+                {[...products.slice(10, 20), ...products.slice(10, 20)].map((p, i) => (
+                  <div key={`r2-${i}`} className="flex h-[104px] w-[130px] shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm md:h-[140px] md:w-[170px]">
                     <img src={p.image} alt={p.alt} className="h-full w-full object-contain" />
                   </div>
                 ))}
               </div>
               {/* Fade edges */}
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-50 to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-sky-50 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-sky-50/60 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-sky-50/60 to-transparent" />
             </motion.div>
           </div>
         </div>
