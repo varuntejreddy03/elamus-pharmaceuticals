@@ -454,6 +454,278 @@ const products = [
     alt: "Tydaproz GM2 product packaging",
     description: "Tydaproz GM2 product packaging image for catalogue display. Please refer to the approved product label for verified composition and usage information.",
     category: "Tablets"
+  },
+  {
+    name: "Elmeterol",
+    slug: "elmeterol",
+    image: "/images/products/elmeterol.webp",
+    alt: "Elmeterol product packaging",
+    description: "Elmeterol product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Fluticasone Nasal Spray",
+    slug: "fluticasone-nasal-spray",
+    image: "/images/products/fluticasone-nasal-spray.webp",
+    alt: "Fluticasone Nasal Spray product packaging",
+    description: "Fluticasone Nasal Spray product image for catalogue display. Please refer to the approved label for usage information.",
+    category: "Nasal Sprays"
+  },
+  {
+    name: "Fluticasone Azelastine Nasal Spray",
+    slug: "fluticasone-azelastine-nasal-spray",
+    image: "/images/products/fluticasone-azelastine-nasal-spray.webp",
+    alt: "Fluticasone Azelastine Nasal Spray product packaging",
+    description: "Fluticasone Azelastine Nasal Spray product image for catalogue display. Verify details from the approved label.",
+    category: "Nasal Sprays"
+  },
+  {
+    name: "Fexomus",
+    slug: "fexomus",
+    image: "/images/products/fexomus.webp",
+    alt: "Fexomus product packaging",
+    description: "Fexomus product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Phlemvac",
+    slug: "phlemvac",
+    image: "/images/products/phlemvac.webp",
+    alt: "Phlemvac product packaging",
+    description: "Phlemvac product packaging image for catalogue display. Product details should be verified from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Elmaphylline A",
+    slug: "elmaphylline-a",
+    image: "/images/products/elmaphylline-a.webp",
+    alt: "Elmaphylline A product packaging",
+    description: "Elmaphylline A product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Elmaphylline D",
+    slug: "elmaphylline-d",
+    image: "/images/products/elmaphylline-d.webp",
+    alt: "Elmaphylline D product packaging",
+    description: "Elmaphylline D product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Classimus",
+    slug: "classimus",
+    image: "/images/products/classimus.webp",
+    alt: "Classimus product packaging",
+    description: "Classimus product packaging image for catalogue display. Please verify product details from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Elmocet M Suspension",
+    slug: "elmocet-m-suspension",
+    image: "/images/products/elmocet-m-suspension.webp",
+    alt: "Elmocet M Suspension product packaging",
+    description: "Elmocet M Suspension product image for catalogue display. Please refer to the approved label for usage information.",
+    category: "Syrups"
+  },
+  {
+    name: "Toxpolma",
+    slug: "toxpolma",
+    image: "/images/products/toxpolma.webp",
+    alt: "Toxpolma product packaging",
+    description: "Toxpolma product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Toxpolma P",
+    slug: "toxpolma-p",
+    image: "/images/products/toxpolma-p.webp",
+    alt: "Toxpolma P product packaging",
+    description: "Toxpolma P product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Mobibond",
+    slug: "mobibond",
+    image: "/images/products/mobibond.webp",
+    alt: "Mobibond product packaging",
+    description: "Mobibond product packaging image for catalogue display. Please verify product details from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Myofrac",
+    slug: "myofrac",
+    image: "/images/products/myofrac.webp",
+    alt: "Myofrac product packaging",
+    description: "Myofrac product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Jointneed 500",
+    slug: "jointneed-500",
+    image: "/images/products/jointneed-500.webp",
+    alt: "Jointneed 500 product packaging",
+    description: "Jointneed 500 product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Durarich 500",
+    slug: "durarich-500",
+    image: "/images/products/durarich-500.webp",
+    alt: "Durarich 500 product packaging",
+    description: "Durarich 500 product packaging image for catalogue display. Product details should be verified from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Myepri",
+    slug: "myepri",
+    image: "/images/products/myepri.webp",
+    alt: "Myepri product packaging",
+    description: "Myepri product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Darsocal D3",
+    slug: "darsocal-d3",
+    image: "/images/products/darsocal-d3.webp",
+    alt: "Darsocal D3 product packaging",
+    description: "Darsocal D3 product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Darsocal CCM",
+    slug: "darsocal-ccm",
+    image: "/images/products/darsocal-ccm.webp",
+    alt: "Darsocal CCM product packaging",
+    description: "Darsocal CCM product packaging image for catalogue display. Please verify product details from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Cagmocef CV 500",
+    slug: "cagmocef-cv-500",
+    image: "/images/products/cagmocef-cv-500.webp",
+    alt: "Cagmocef CV 500 product packaging",
+    description: "Cagmocef CV 500 product packaging image for catalogue display. Please refer to the approved label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Cagmocef",
+    slug: "cagmocef",
+    image: "/images/products/cagmocef.webp",
+    alt: "Cagmocef product packaging",
+    description: "Cagmocef product packaging image for catalogue display. Product details should be verified from the official label.",
+    category: "Capsules"
+  },
+  {
+    name: "Cefumba",
+    slug: "cefumba",
+    image: "/images/products/cefumba.webp",
+    alt: "Cefumba product packaging",
+    description: "Cefumba product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Lizopower",
+    slug: "lizopower",
+    image: "/images/products/lizopower.webp",
+    alt: "Lizopower product packaging",
+    description: "Lizopower product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Medbit BT",
+    slug: "medbit-bt",
+    image: "/images/products/medbit-bt.webp",
+    alt: "Medbit BT product packaging",
+    description: "Medbit BT product packaging image for catalogue display. Please verify product details from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Elmafast",
+    slug: "elmafast",
+    image: "/images/products/elmafast.webp",
+    alt: "Elmafast product packaging",
+    description: "Elmafast product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Myounion",
+    slug: "myounion",
+    image: "/images/products/myounion.webp",
+    alt: "Myounion product packaging",
+    description: "Myounion product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Faromus 300 ER",
+    slug: "faromus-300-er",
+    image: "/images/products/faromus-300-er.webp",
+    alt: "Faromus 300 ER product packaging",
+    description: "Faromus 300 ER product packaging image for catalogue display. Product details should be verified from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Captenz L",
+    slug: "captenz-l",
+    image: "/images/products/captenz-l.webp",
+    alt: "Captenz L product packaging",
+    description: "Captenz L product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Darsocal D3 Plus",
+    slug: "darsocal-d3-plus",
+    image: "/images/products/darsocal-d3-plus.webp",
+    alt: "Darsocal D3 Plus product packaging",
+    description: "Darsocal D3 Plus product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Tablets"
+  },
+  {
+    name: "Flupelamus P",
+    slug: "flupelamus-p",
+    image: "/images/products/flupelamus-p.webp",
+    alt: "Flupelamus P product packaging",
+    description: "Flupelamus P product packaging image for catalogue display. Please verify product details from the official label.",
+    category: "Tablets"
+  },
+  {
+    name: "Caldobeslate",
+    slug: "caldobeslate",
+    image: "/images/products/caldobeslate.webp",
+    alt: "Caldobeslate product packaging",
+    description: "Caldobeslate product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Tablets"
+  },
+  {
+    name: "Glutoxidant",
+    slug: "glutoxidant",
+    image: "/images/products/glutoxidant.webp",
+    alt: "Glutoxidant product packaging",
+    description: "Glutoxidant product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Nutraceuticals"
+  },
+  {
+    name: "Broncohailer",
+    slug: "broncohailer",
+    image: "/images/products/broncohailer.webp",
+    alt: "Broncohailer product packaging",
+    description: "Broncohailer product packaging image for catalogue display. Product details should be verified from the official label.",
+    category: "Inhalers"
+  },
+  {
+    name: "Budemus FD",
+    slug: "budemus-fd",
+    image: "/images/products/budemus-fd.webp",
+    alt: "Budemus FD product packaging",
+    description: "Budemus FD product packaging image for catalogue display. Please refer to the approved product label for verified information.",
+    category: "Inhalers"
+  },
+  {
+    name: "Budemus F",
+    slug: "budemus-f",
+    image: "/images/products/budemus-f.webp",
+    alt: "Budemus F product packaging",
+    description: "Budemus F product packaging image for catalogue display. Please refer to the approved label for verified details.",
+    category: "Inhalers"
   }
 ];
 
