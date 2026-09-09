@@ -726,6 +726,22 @@ const products = [
     alt: "Budemus F product packaging",
     description: "Budemus F product packaging image for catalogue display. Please refer to the approved label for verified details.",
     category: "Inhalers"
+  },
+  {
+    name: "Tysitren GM1",
+    slug: "tysitren-gm1",
+    image: "/images/TYSITREN-GM-1-PRINT-10X15-BLISTER.png",
+    alt: "Tysitren GM1 product packaging",
+    description: "Tysitren GM1 product packaging image for catalogue display. Please refer to the approved product label or consult a qualified healthcare professional for composition, dosage, and usage information.",
+    category: "Tablets"
+  },
+  {
+    name: "Tysitren GM2",
+    slug: "tysitren-gm2",
+    image: "/images/TYSITREN-GM2-PRINT-10X15-BLISTER.png",
+    alt: "Tysitren GM2 product packaging",
+    description: "Tysitren GM2 product packaging image for catalogue display. Please refer to the approved product label or consult a qualified healthcare professional for composition, dosage, and usage information.",
+    category: "Tablets"
   }
 ];
 

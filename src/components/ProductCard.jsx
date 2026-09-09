@@ -1,50 +1,94 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, Plus, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
   const { addToCart, removeFromCart, isInCart } = useCart();
   const inCart = isInCart(product.slug);
-  const whatsappUrl = `https://wa.me/917989005105?text=${encodeURIComponent(`Hello Elamus Pharmaceuticals, I would like to enquire about ${product.name}.`)}`;
+  const wa = `https://wa.me/917989005105?text=${encodeURIComponent(`Hello Elamus Pharmaceuticals, I would like to enquire about ${product.name}.`)}`;
 
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <Link to={`/products/${product.slug}`} className="block">
-        <div className="relative h-44 overflow-hidden bg-gradient-to-br from-slate-50 to-sky-50 p-4 sm:h-52 lg:h-56">
-          <img src={product.image} alt={product.alt} loading="lazy" className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105" />
-          <span className="absolute right-3 top-3 rounded-full bg-sky-50 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-sky-700 border border-sky-100">
-            {product.category}
-          </span>
+    <motion.article
+      whileHover={{ y: -4, boxShadow: '0 14px 36px rgba(0,0,0,.12)' }}
+      transition={{ duration: 0.2, ease: 'easeOut' }}
+      style={{
+        background: 'var(--surface-container-lowest)',
+        border: '1px solid var(--outline-variant)',
+        borderRadius: 16,
+        padding: 16,
+        boxShadow: '0 2px 8px rgba(0,0,0,.04)',
+        display: 'flex', flexDirection: 'column', gap: 12,
+      }}
+    >
+      {/* Category + label */}
+      <div className="flex items-start justify-between">
+        <span className="text-label-sm font-semibold px-2 py-0.5 rounded"
+          style={{ background: 'var(--surface-container)', color: 'var(--primary)', fontSize: 11 }}>
+          {product.category}
+        </span>
+        <span className="text-label-sm font-mono" style={{ color: 'var(--secondary)', fontSize: 11 }}>
+          Catalogue
+        </span>
+      </div>
+
+      {/* Image + info */}
+      <Link to={`/products/${product.slug}`} style={{ textDecoration: 'none' }}>
+        <div className="flex gap-3">
+          <motion.div
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
+            className="shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
+            style={{ width: 80, height: 80, background: 'var(--surface-container)', border: '1px solid var(--outline-variant)' }}>
+            <img src={product.image} alt={product.alt} loading="lazy"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 8 }} />
+          </motion.div>
+          <div className="space-y-1 min-w-0">
+            <h3 className="text-headline-sm font-bold text-on-surface" style={{ fontSize: 16, lineHeight: 1.3 }}>
+              {product.name}
+            </h3>
+            <p className="text-body-sm text-on-surface-variant line-clamp-2" style={{ fontSize: 12 }}>
+              {product.description}
+            </p>
+            <span className="text-label-sm font-medium" style={{ color: 'var(--tertiary)', fontSize: 11 }}>
+              Mumbai Catalogue
+            </span>
+          </div>
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col p-4">
-        <Link to={`/products/${product.slug}`}>
-          <h3 className="line-clamp-1 text-sm font-bold text-slate-900 group-hover:text-sky-600 sm:text-[15px]">{product.name}</h3>
-        </Link>
-        <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-500">{product.description}</p>
+      {/* Actions */}
+      <div className="grid grid-cols-2 gap-2 pt-2" style={{ borderTop: '1px solid var(--outline-variant)' }}>
+        <motion.button
+          type="button"
+          whileTap={{ scale: 0.95 }}
+          onClick={() => inCart ? removeFromCart(product.slug) : addToCart(product)}
+          className="flex items-center justify-center gap-1 text-label-md"
+          style={{
+            height: 36, borderRadius: 8, fontSize: 13, fontWeight: 500, cursor: 'pointer',
+            border: inCart ? '1px solid var(--error)' : '1px solid var(--primary)',
+            background: inCart ? 'var(--error-container)' : 'transparent',
+            color: inCart ? 'var(--error)' : 'var(--primary)',
+            transition: 'background 0.18s, color 0.18s',
+          }}>
+          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+            {inCart ? 'remove_shopping_cart' : 'add_shopping_cart'}
+          </span>
+          <span>{inCart ? 'Remove' : '+ Add'}</span>
+        </motion.button>
 
-        <div className="mt-auto grid grid-cols-1 gap-2 pt-4 min-[420px]:grid-cols-2">
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-            className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-sky-600 text-[13px] font-bold text-white hover:bg-sky-700">
-            <MessageCircle size={14} />
-            <span>Enquire</span>
-          </a>
-          <button
-            type="button"
-            onClick={() => inCart ? removeFromCart(product.slug) : addToCart(product)}
-            className={`flex h-11 items-center justify-center gap-1.5 rounded-xl text-[13px] font-bold transition-all ${
-              inCart
-                ? 'border border-red-200 bg-red-50 text-red-500 hover:bg-red-100'
-                : 'border border-slate-200 text-slate-600 hover:border-sky-300 hover:text-sky-600'
-            }`}
-          >
-            {inCart ? <X size={14} /> : <Plus size={14} />}
-            <span className="hidden min-[420px]:inline">{inCart ? 'Remove' : 'Add to Enquiry'}</span>
-            <span className="min-[420px]:hidden">{inCart ? 'Remove' : 'Add'}</span>
-          </button>
-        </div>
+        <motion.a
+          href={wa} target="_blank" rel="noopener noreferrer"
+          whileHover={{ background: 'var(--primary-container)' }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center justify-center gap-1 text-label-md"
+          style={{
+            height: 36, borderRadius: 8, fontSize: 13, fontWeight: 500,
+            background: 'var(--primary)', color: 'var(--on-primary)', textDecoration: 'none',
+          }}>
+          <span>Enquire</span>
+          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>chat</span>
+        </motion.a>
       </div>
-    </div>
+    </motion.article>
   );
 }

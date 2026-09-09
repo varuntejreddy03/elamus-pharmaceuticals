@@ -1,107 +1,246 @@
 import { motion } from 'framer-motion';
-import { Shield, BookOpen, Users, Star, MapPin, Building2, Target, Eye, Briefcase } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
+const fUp   = { hidden: { opacity: 0, y: 18 },  visible: { opacity: 1, y: 0 } };
+const fLeft = { hidden: { opacity: 0, x: -18 }, visible: { opacity: 1, x: 0 } };
+const fRight= { hidden: { opacity: 0, x: 18 },  visible: { opacity: 1, x: 0 } };
+const VP    = { once: true, margin: '-40px' };
 
 export default function About() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%)' }}>
-        <div className="container-custom relative">
-          <motion.div initial="hidden" animate="visible" variants={fade} className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 flex justify-center">
-              <img src="/images/products/elamus-logo.png" alt="Elamus Pharmaceuticals" className="h-14 w-auto object-contain sm:h-16" />
+
+      {/* ── HERO HEADER ── */}
+      <section style={{ background: 'linear-gradient(180deg, var(--surface-bright) 0%, var(--surface-container-low) 100%)', borderBottom: '1px solid var(--outline-variant)', padding: '56px 24px 48px' }}>
+        <div className="container-custom">
+          <motion.div initial="hidden" animate="visible" variants={fUp} className="text-center max-w-3xl mx-auto">
+            <div className="flex justify-center mb-5">
+              <img src="/images/products/elamus-logo.png" alt="Elamus Pharmaceuticals" style={{ height: 48, width: 'auto', objectFit: 'contain' }} />
             </div>
-            <span className="eyebrow"><Building2 size={11} /> About Us</span>
-            <h1 className="mt-5 section-heading">About Our Company</h1>
-            <p className="mt-5 text-base leading-relaxed text-slate-500 sm:text-lg">Elamus Pharmaceuticals Private Limited is an Indian pharmaceutical company incorporated on April 26, 2022. Headquartered in Mumbai, Maharashtra, the company specializes in marketing and distributing a wide range of medications.</p>
+            <span className="text-eyebrow text-primary uppercase font-bold">About Us</span>
+            <h1 className="text-headline-lg text-on-surface mt-2 mb-4" style={{ fontFamily: 'Manrope', fontSize: 'clamp(26px,4vw,40px)' }}>
+              About Elamus Pharmaceuticals
+            </h1>
+            <p className="text-body-lg text-on-surface-variant">
+              Elamus Pharmaceuticals Private Limited is an Indian pharmaceutical company incorporated on April 26, 2022. Headquartered in Mumbai, Maharashtra, the company specialises in marketing and distributing a wide range of medications.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-12 grid gap-6 sm:grid-cols-2">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} className="premium-card p-6 sm:p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-600">
-                  <Target size={22} className="text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">Our Mission</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-500">To provide accessible and reliable pharmaceutical products through a transparent catalogue system, enabling healthcare professionals and stakeholders to make informed enquiries with ease and confidence.</p>
-              </motion.div>
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} transition={{ delay: 0.1 }} className="premium-card p-6 sm:p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-600">
-                  <Eye size={22} className="text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">Our Vision</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-500">To become a trusted name in pharmaceutical distribution by maintaining responsible product communication, quality standards, and building long-term relationships with healthcare partners across India.</p>
-              </motion.div>
-            </div>
-
-            {/* Approach */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} className="premium-card p-6 sm:p-8">
-              <h2 className="mb-4 text-xl font-bold text-slate-900">Our Approach</h2>
-              <p className="mb-4 leading-relaxed text-slate-500">We specialize in marketing, distribution, and wholesale of pharmaceutical products including tablets, capsules, inhalers, and syrups covering respiratory, CNS, and anti-infective categories.</p>
-              <p className="leading-relaxed text-slate-500">We encourage visitors to refer to approved product labels and consult qualified healthcare professionals for composition, dosage, and usage guidelines.</p>
-            </motion.div>
-
-            {/* Values */}
-            <h2 className="mb-8 mt-16 text-center text-2xl font-bold text-slate-900">Our Values</h2>
-            <div className="grid gap-5 sm:grid-cols-2">
+      {/* ── COMPANY PROFILE STATS ── */}
+      <section style={{ background: 'var(--surface-container-lowest)', paddingLeft: 24, paddingRight: 24 }}>
+        <div className="container-custom" style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}
+            className="rounded-2xl overflow-hidden"
+            style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)', boxShadow: '0 8px 24px rgba(0,0,0,.08)', marginTop: -24, position: 'relative', zIndex: 10 }}>
+            <div className="grid grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: Shield, title: 'Reliability', desc: 'Accurate and consistent product catalogue information.' },
-                { icon: BookOpen, title: 'Responsible Information', desc: 'Verified product details without exaggerated claims.' },
-                { icon: Users, title: 'Accessibility', desc: 'Easy enquiry through WhatsApp, phone, and direct contact.' },
-                { icon: Star, title: 'Quality Focus', desc: 'High standards in product range and presentation.' },
-              ].map((v, i) => (
-                <motion.div key={v.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} transition={{ delay: i * 0.08 }} className="premium-card p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50">
-                    <v.icon size={20} className="text-sky-600" />
+                { icon: 'calendar_month', value: '2022',    label: 'Incorporated',      sub: 'April 26, 2022',       color: 'var(--primary)' },
+                { icon: 'medication',     value: '50+',     label: 'Products Listed',   sub: 'Active Dossiers',      color: 'var(--primary)' },
+                { icon: 'location_city',  value: 'Mumbai',  label: 'Headquarters',      sub: 'Maharashtra, India',   color: 'var(--on-surface)' },
+                { icon: 'verified_user',  value: 'CDSCO',   label: 'Regulatory Aligned',sub: 'WHO-GMP Standards',    color: 'var(--tertiary)' },
+              ].map((s, i) => (
+                <div key={s.label} className="flex flex-col items-center text-center p-5"
+                  style={{ borderRight: i < 3 ? '1px solid var(--outline-variant)' : 'none', borderBottom: i < 2 ? '1px solid var(--outline-variant)' : 'none' }}>
+                  <div className="flex items-center justify-center rounded-xl mb-3" style={{ width: 38, height: 38, background: 'var(--surface-container)', color: s.color }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: 18 }}>{s.icon}</span>
                   </div>
-                  <h3 className="text-[15px] font-bold text-slate-900">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-500">{v.desc}</p>
-                </motion.div>
+                  <span className="font-bold leading-none mb-1" style={{ fontFamily: 'Manrope', fontSize: 22, color: s.color }}>{s.value}</span>
+                  <span className="text-label-sm text-secondary">{s.label}</span>
+                  <span className="text-label-sm" style={{ color: 'var(--outline)', fontSize: 10, marginTop: 2 }}>{s.sub}</span>
+                </div>
               ))}
             </div>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Office */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} className="mt-8 premium-card p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-600"><MapPin size={16} className="text-white" /></div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Registered Office</h3>
-                  <p className="mt-1 text-sm text-slate-500">Unit No. 611, Reliables Pride, Anand Nagar, Opp. Heera Panna, Jogeshwari West, Mumbai, Maharashtra 400102</p>
-                  <p className="mt-1 text-xs text-slate-400">CIN: U24100MH2022PTC381442</p>
+      {/* ── MISSION & VISION ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-lowest)' }}>
+        <div className="container-custom">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-12">
+            <span className="text-eyebrow text-primary uppercase font-bold">Our Purpose</span>
+            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Mission & Vision</h2>
+          </motion.div>
+
+          <div className="grid gap-5 sm:grid-cols-2 mb-6">
+            {[
+              { icon: 'my_location', title: 'Our Mission', desc: 'To provide accessible and reliable pharmaceutical products through a transparent catalogue system, enabling healthcare professionals and stakeholders to make informed enquiries with ease and confidence.' },
+              { icon: 'visibility',  title: 'Our Vision',  desc: 'To become a trusted name in pharmaceutical distribution by maintaining responsible product communication, quality standards, and building long-term relationships with healthcare partners across India.' },
+            ].map((item, i) => (
+              <motion.div key={item.title} initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ delay: i * 0.1 }}
+                className="p-6 rounded-xl"
+                style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)', boxShadow: '0 2px 8px rgba(0,0,0,.04)' }}>
+                <div className="flex items-center justify-center rounded-xl mb-4" style={{ width: 44, height: 44, background: 'var(--surface-container)', color: 'var(--primary)' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 22 }}>{item.icon}</span>
                 </div>
+                <h3 className="text-headline-sm font-bold text-on-surface mb-3" style={{ fontFamily: 'Manrope', fontSize: 18 }}>{item.title}</h3>
+                <p className="text-body-md text-secondary">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Approach */}
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}
+            className="p-6 rounded-xl"
+            style={{ background: 'var(--surface-container-low)', border: '1px solid var(--outline-variant)' }}>
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary shrink-0 mt-0.5" style={{ fontSize: 22 }}>business_center</span>
+              <div>
+                <h2 className="text-headline-sm font-bold text-on-surface mb-3" style={{ fontFamily: 'Manrope', fontSize: 18 }}>Our Approach</h2>
+                <p className="text-body-md text-secondary mb-3">
+                  We specialise in marketing, distribution, and wholesale of pharmaceutical products including tablets, capsules, inhalers, and syrups covering respiratory, CNS, and anti-infective categories.
+                </p>
+                <p className="text-body-md text-secondary">
+                  We encourage visitors to refer to approved product labels and consult qualified healthcare professionals for composition, dosage, and usage guidelines.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── VALUES ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-low)', borderTop: '1px solid var(--outline-variant)' }}>
+        <div className="container-custom">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-12">
+            <span className="text-eyebrow text-primary uppercase font-bold">What We Stand For</span>
+            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Our Core Values</h2>
+          </motion.div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: 'verified_user', title: 'Reliability',             desc: 'Accurate and consistent product catalogue information you can trust.' },
+              { icon: 'menu_book',     title: 'Responsible Information', desc: 'Verified product details without exaggerated or unverified claims.' },
+              { icon: 'groups',        title: 'Accessibility',           desc: 'Easy enquiry through WhatsApp, phone, and direct contact channels.' },
+              { icon: 'star',          title: 'Quality Focus',           desc: 'High standards in product range, presentation, and communication.' },
+            ].map((v, i) => (
+              <motion.div key={v.title} initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ delay: i * 0.08 }}
+                className="flex flex-col p-5 rounded-xl"
+                style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)', boxShadow: '0 2px 6px rgba(0,0,0,.04)' }}>
+                <div className="flex items-center justify-center rounded-lg mb-4" style={{ width: 44, height: 44, background: 'var(--surface-container)', color: 'var(--primary)' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 22 }}>{v.icon}</span>
+                </div>
+                <h3 className="text-title-md font-bold text-on-surface mb-2">{v.title}</h3>
+                <p className="text-body-sm text-secondary">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPANY INFO + OFFICE ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
+        <div className="container-custom">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
+
+            {/* Left — registered office */}
+            <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fLeft} transition={{ duration: 0.6 }}>
+              <span className="text-eyebrow text-primary uppercase font-bold">Corporate Details</span>
+              <h2 className="text-headline-lg text-on-surface mt-2 mb-6" style={{ fontFamily: 'Manrope', fontSize: 'clamp(22px,3vw,32px)' }}>
+                Registered Office
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { icon: 'location_on',  label: 'Address',    value: 'Unit No. 611, Reliables Pride, Anand Nagar, Opp. Heera Panna, Jogeshwari West, Mumbai, Maharashtra 400102' },
+                  { icon: 'badge',        label: 'CIN',        value: 'U24100MH2022PTC381442' },
+                  { icon: 'call',         label: 'Phone',      value: '+91 7989005105', href: 'tel:+917989005105' },
+                  { icon: 'mail',         label: 'Email',      value: 'elamusmdgkr@gmail.com', href: 'mailto:elamusmdgkr@gmail.com' },
+                  { icon: 'schedule',     label: 'Hours',      value: 'Mon – Sat: 9:00 AM – 6:30 PM IST' },
+                ].map(row => (
+                  <div key={row.label} className="flex items-start gap-4">
+                    <div className="flex items-center justify-center rounded-lg shrink-0" style={{ width: 38, height: 38, background: 'var(--surface-container)', color: 'var(--primary)' }}>
+                      <span className="material-symbols-outlined" style={{ fontSize: 18 }}>{row.icon}</span>
+                    </div>
+                    <div>
+                      <div className="text-label-sm text-secondary font-medium mb-0.5">{row.label}</div>
+                      {row.href
+                        ? <a href={row.href} className="text-body-md font-semibold text-on-surface hover:text-primary transition-colors" style={{ textDecoration: 'none' }}>{row.value}</a>
+                        : <div className="text-body-md font-medium text-on-surface">{row.value}</div>
+                      }
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right — responsibility card */}
+            <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fRight} transition={{ duration: 0.6, delay: 0.15 }}>
+              <div className="p-6 rounded-2xl mb-5" style={{ background: 'var(--surface-container-low)', border: '1px solid var(--outline-variant)' }}>
+                <div className="flex items-center gap-3 pb-4 mb-4" style={{ borderBottom: '1px solid var(--outline-variant)' }}>
+                  <div className="flex items-center justify-center rounded-xl" style={{ width: 48, height: 48, background: 'var(--surface-container-high)', color: 'var(--primary)' }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: 26 }}>fact_check</span>
+                  </div>
+                  <div>
+                    <h3 className="text-title-md font-bold text-on-surface">Standardized Compliance</h3>
+                    <span className="text-label-sm font-semibold flex items-center gap-1" style={{ color: 'var(--tertiary)', fontSize: 11 }}>
+                      <span className="material-symbols-outlined" style={{ fontSize: 13 }}>verified</span>
+                      CDSCO &amp; WHO-GMP Compliant
+                    </span>
+                  </div>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'Clearly presented composition and active ingredients',
+                    'Organized pharmaceutical catalogue with verified pack codes',
+                    'Responsible corporate and dosage warning communication',
+                    'Easy enquiry support with prompt documentation turnaround',
+                    'Professional healthcare presentation for licensed practitioners',
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="material-symbols-outlined text-primary shrink-0 mt-0.5" style={{ fontSize: 18 }}>check_circle</span>
+                      <span className="text-body-sm text-on-surface">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link to="/products" className="btn-primary" style={{ flex: 1, justifyContent: 'center', borderRadius: 10, textDecoration: 'none' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>medication</span>
+                  View Products
+                </Link>
+                <Link to="/contact" className="btn-outline" style={{ flex: 1, justifyContent: 'center', borderRadius: 10, textDecoration: 'none' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>support_agent</span>
+                  Contact Us
+                </Link>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Career */}
-      <section className="section-padding" style={{ background: '#f8fafc' }}>
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}>
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-600">
-                <Briefcase size={24} className="text-white" />
-              </div>
-              <h2 className="section-heading">Careers</h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-500">We are always looking for talented and motivated individuals to join our growing team. If you are passionate about the pharmaceutical industry and want to be part of a dynamic company, we'd love to hear from you.</p>
-              <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-base font-bold text-slate-900">Interested in joining Elamus?</h3>
-                <p className="mt-2 text-sm text-slate-500">Send your resume and a brief introduction to:</p>
-                <a href="mailto:elamusmdgkr@gmail.com" className="mt-3 inline-flex h-11 items-center gap-2 rounded-xl bg-sky-600 px-6 text-sm font-bold text-white hover:bg-sky-700">
+      {/* ── CAREERS ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-low)', borderTop: '1px solid var(--outline-variant)' }}>
+        <div className="container-custom max-w-2xl mx-auto text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}>
+            <div className="flex items-center justify-center rounded-2xl mx-auto mb-5" style={{ width: 52, height: 52, background: 'var(--surface-container)', color: 'var(--primary)' }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 26 }}>work</span>
+            </div>
+            <span className="text-eyebrow text-primary uppercase font-bold">Join Our Team</span>
+            <h2 className="text-headline-lg text-on-surface mt-2 mb-4" style={{ fontFamily: 'Manrope' }}>Careers at Elamus</h2>
+            <p className="text-body-lg text-on-surface-variant mb-8">
+              We are always looking for talented and motivated individuals to join our growing team. If you are passionate about the pharmaceutical industry, we'd love to hear from you.
+            </p>
+            <div className="p-6 rounded-xl text-left" style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)', boxShadow: '0 2px 8px rgba(0,0,0,.04)' }}>
+              <h3 className="text-title-md font-bold text-on-surface mb-2">Interested in joining Elamus?</h3>
+              <p className="text-body-sm text-secondary mb-5">Send your resume and a brief introduction to our HR team:</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href="mailto:elamusmdgkr@gmail.com" className="btn-primary" style={{ flex: 1, justifyContent: 'center', borderRadius: 10 }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>mail</span>
                   elamusmdgkr@gmail.com
                 </a>
-                <p className="mt-3 text-xs text-slate-400">Or reach us on WhatsApp: +91 7989005105</p>
+                <a href="https://wa.me/917989005105?text=Hello%20Elamus%20Pharmaceuticals%2C%20I%20am%20interested%20in%20career%20opportunities."
+                  target="_blank" rel="noopener noreferrer"
+                  className="btn-outline" style={{ flex: 1, justifyContent: 'center', borderRadius: 10, textDecoration: 'none' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 18 }}>chat</span>
+                  WhatsApp Us
+                </a>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
