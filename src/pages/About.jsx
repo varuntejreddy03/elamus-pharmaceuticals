@@ -130,6 +130,83 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── MANUFACTURING UNIT ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
+        <div className="container-custom">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-12">
+            <span className="text-eyebrow text-primary uppercase font-bold">Our Facility</span>
+            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Manufacturing Unit</h2>
+            <p className="text-body-md text-secondary mt-3 max-w-2xl mx-auto">
+              Our state-of-the-art manufacturing facility operates under strict WHO-GMP and CDSCO guidelines, ensuring every product meets the highest pharmaceutical standards.
+            </p>
+          </motion.div>
+
+          {/* Video clip */}
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="mb-10">
+            <div className="relative rounded-2xl overflow-hidden mx-auto" style={{ maxWidth: 800, border: '1px solid var(--outline-variant)', boxShadow: '0 12px 40px rgba(0,0,0,.15)' }}>
+              <video
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', display: 'block' }}
+              >
+                <source src="/ba9f1aa035.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+
+          {/* Image grid */}
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {[
+              { src: 'https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Tablet Manufacturing' },
+              { src: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Quality Control Lab' },
+              { src: 'https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Research & Development' },
+              { src: 'https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Packaging Unit' },
+              { src: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Sterile Production' },
+              { src: 'https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Dispensing Area' },
+              { src: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Blister Packing' },
+              { src: 'https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Warehouse & Storage' },
+              { src: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Analytical Testing' },
+              { src: 'https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Microbiology Lab' },
+            ].map((img, i) => (
+              <motion.div key={i}
+                initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ duration: 0.35, delay: (i % 5) * 0.07 }}
+                className="group relative rounded-xl overflow-hidden"
+                style={{ border: '1px solid var(--outline-variant)', boxShadow: '0 2px 8px rgba(0,0,0,.06)', aspectRatio: '4/3' }}>
+                <img
+                  src={img.src}
+                  alt={img.label}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                />
+                <div className="absolute inset-0 flex items-end"
+                  style={{ background: 'linear-gradient(to top, rgba(7,28,44,.75) 0%, transparent 55%)' }}>
+                  <span style={{ padding: '8px 12px', fontSize: 11, fontWeight: 600, color: 'white', letterSpacing: '0.02em' }}>
+                    {img.label}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Compliance badges */}
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {['WHO-GMP Certified', 'CDSCO Compliant', 'ISO 9001:2015', 'COA Verified Batches', 'Cold Chain Capable'].map(badge => (
+              <div key={badge} className="flex items-center gap-2 px-4 py-2 rounded-full"
+                style={{ background: 'var(--surface-container-low)', border: '1px solid var(--outline-variant)', fontSize: 12, fontWeight: 600, color: 'var(--on-surface-variant)' }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 15, color: 'var(--tertiary)' }}>verified</span>
+                {badge}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── COMPANY INFO + OFFICE ── */}
       <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
         <div className="container-custom">
