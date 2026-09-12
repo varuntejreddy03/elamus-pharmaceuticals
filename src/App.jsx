@@ -10,6 +10,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import EnquiryCart from './pages/EnquiryCart';
+import Careers from './pages/Careers';
 
 /* ── Page transition wrapper ── */
 const pageVariants = {
@@ -38,6 +39,7 @@ function AnimatedRoutes() {
         <Route path="/products/:slug" element={<PageWrapper><ProductDetail /></PageWrapper>} />
         <Route path="/contact"        element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/enquiry-cart"   element={<PageWrapper><EnquiryCart /></PageWrapper>} />
+        <Route path="/careers"        element={<PageWrapper><Careers /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );

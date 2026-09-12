@@ -20,6 +20,7 @@ export default function Navbar() {
     { to: '/',        label: 'Home' },
     { to: '/about',   label: 'About Us' },
     { to: '/products',label: 'Products' },
+    { to: '/careers', label: 'Careers' },
     { to: '/contact', label: 'Contact' },
   ];
   const active = (p) => location.pathname === p;

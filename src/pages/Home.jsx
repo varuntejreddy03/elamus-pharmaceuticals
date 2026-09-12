@@ -117,7 +117,7 @@ export default function Home() {
               {/* body */}
               <motion.p initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.35 }}
                 className="text-body-lg text-on-surface-variant" style={{ maxWidth:520 }}>
-                Elamus Pharmaceuticals Pvt. Ltd. offers a growing portfolio of pharmaceutical and nutraceutical products with an uncompromising focus on quality, responsible information, and dependable enquiry support.
+                <strong style={{ color:'var(--primary)', fontWeight:800 }}>Elamus Pharmaceuticals</strong> Pvt. Ltd. offers a growing portfolio of pharmaceutical and nutraceutical products with an uncompromising focus on quality, responsible information, and dependable enquiry support.
               </motion.p>
 
               {/* CTAs */}

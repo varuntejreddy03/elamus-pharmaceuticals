@@ -43,6 +43,7 @@ export default function Footer() {
                 { to: '/',             l: 'Home' },
                 { to: '/products',     l: 'Products & Formulations' },
                 { to: '/about',        l: 'Responsibility & Ethics' },
+                { to: '/careers',      l: 'Careers' },
                 { to: '/contact',      l: 'Contact Corporate Office' },
                 { to: '/enquiry-cart', l: 'Commercial Enquiry Cart' },
               ].map(x => (
