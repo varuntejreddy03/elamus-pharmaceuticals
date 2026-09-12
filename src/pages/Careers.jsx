@@ -3,14 +3,6 @@ import { motion } from 'framer-motion';
 const fUp  = { hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } };
 const VP   = { once: true, margin: '-40px' };
 
-const OPENINGS = [
-  { title: 'Medical Representative', location: 'Mumbai / Pan India', type: 'Full-time', dept: 'Sales' },
-  { title: 'Area Sales Manager',     location: 'Maharashtra',        type: 'Full-time', dept: 'Sales' },
-  { title: 'Regulatory Affairs Executive', location: 'Mumbai HQ',   type: 'Full-time', dept: 'Regulatory' },
-  { title: 'Product Manager',        location: 'Mumbai HQ',          type: 'Full-time', dept: 'Marketing' },
-  { title: 'Quality Assurance Officer', location: 'Mumbai HQ',       type: 'Full-time', dept: 'Quality' },
-];
-
 export default function Careers() {
   return (
     <div>
@@ -60,35 +52,17 @@ export default function Careers() {
       {/* CURRENT OPENINGS */}
       <section className="sp" style={{ background: 'var(--surface-container-low)', borderTop: '1px solid var(--outline-variant)' }}>
         <div className="container-custom">
-          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-12">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-8">
             <span className="text-eyebrow text-primary uppercase font-bold">Openings</span>
             <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Current Opportunities</h2>
           </motion.div>
-          <div className="space-y-4 max-w-3xl mx-auto">
-            {OPENINGS.map((job, i) => (
-              <motion.div key={job.title} initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ delay: i * 0.07 }}
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl"
-                style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)', boxShadow: '0 2px 6px rgba(0,0,0,.04)' }}>
-                <div>
-                  <h3 className="text-title-md font-bold text-on-surface">{job.title}</h3>
-                  <div className="flex flex-wrap gap-3 mt-1.5">
-                    <span className="flex items-center gap-1 text-label-sm text-secondary">
-                      <span className="material-symbols-outlined" style={{ fontSize: 14 }}>location_on</span>{job.location}
-                    </span>
-                    <span className="flex items-center gap-1 text-label-sm text-secondary">
-                      <span className="material-symbols-outlined" style={{ fontSize: 14 }}>work</span>{job.type}
-                    </span>
-                    <span className="text-label-sm px-2 py-0.5 rounded font-semibold" style={{ background: 'var(--surface-container)', color: 'var(--primary)', fontSize: 11 }}>{job.dept}</span>
-                  </div>
-                </div>
-                <a href={`https://wa.me/917989005105?text=Hello%20Elamus%20Pharmaceuticals%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(job.title)}%20position.`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="btn-primary shrink-0" style={{ borderRadius: 10, fontSize: 13 }}>
-                  Apply Now
-                </a>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}
+            className="max-w-2xl mx-auto text-center p-8 rounded-2xl"
+            style={{ background: 'var(--surface-container-lowest)', border: '1px solid var(--outline-variant)' }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 48, color: 'var(--outline-variant)', display: 'block', marginBottom: 16 }}>work_history</span>
+            <p className="font-semibold text-on-surface-variant" style={{ fontSize: 15 }}>No openings at the moment.</p>
+            <p className="text-secondary mt-2" style={{ fontSize: 13 }}>Check back soon or send us a general application below.</p>
+          </motion.div>
         </div>
       </section>
 
