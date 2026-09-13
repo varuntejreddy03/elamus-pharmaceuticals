@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import products from '../data/products';
 
 const fUp   = { hidden: { opacity: 0, y: 18 },  visible: { opacity: 1, y: 0 } };
 const fLeft = { hidden: { opacity: 0, x: -18 }, visible: { opacity: 1, x: 0 } };
@@ -130,82 +131,192 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── MANUFACTURING UNIT ── */}
-      <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
+      {/* ── OFFICE IMAGE ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-low)', borderTop: '1px solid var(--outline-variant)' }}>
         <div className="container-custom">
-          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-12">
-            <span className="text-eyebrow text-primary uppercase font-bold">Our Facility</span>
-            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Manufacturing Unit</h2>
-            <p className="text-body-md text-secondary mt-3 max-w-2xl mx-auto">
-              Our state-of-the-art manufacturing facility operates under strict WHO-GMP and CDSCO guidelines, ensuring every product meets the highest pharmaceutical standards.
-            </p>
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-10">
+            <span className="text-eyebrow text-primary uppercase font-bold">Our Workspace</span>
+            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Our Office &amp; Conference Hall</h2>
+            <p className="text-body-md text-secondary mt-3 max-w-xl mx-auto">A professional workspace built for pharmaceutical excellence in the heart of Mumbai.</p>
           </motion.div>
-
-          {/* Video clip */}
-          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="mb-10">
-            <div className="relative rounded-2xl overflow-hidden mx-auto" style={{ maxWidth: 800, border: '1px solid var(--outline-variant)', boxShadow: '0 12px 40px rgba(0,0,0,.15)' }}>
-              <video
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: '100%', display: 'block' }}
-              >
-                <source src="/ba9f1aa035.mp4" type="video/mp4" />
-              </video>
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ delay: 0.1 }}>
+            <div style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid var(--outline-variant)', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}>
+              <img
+                src="/images/products/office-new.jpeg"
+                alt="Elamus Pharmaceuticals Office and Conference Hall"
+                style={{ width: '100%', height: 'clamp(220px, 40vw, 520px)', objectFit: 'cover', display: 'block' }}
+              />
             </div>
-          </motion.div>
-
-          {/* Image grid */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {[
-              { src: 'https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Tablet Manufacturing' },
-              { src: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Quality Control Lab' },
-              { src: 'https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Research & Development' },
-              { src: 'https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Packaging Unit' },
-              { src: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Sterile Production' },
-              { src: 'https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Dispensing Area' },
-              { src: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Blister Packing' },
-              { src: 'https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Warehouse & Storage' },
-              { src: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Analytical Testing' },
-              { src: 'https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Microbiology Lab' },
-            ].map((img, i) => (
-              <motion.div key={i}
-                initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ duration: 0.35, delay: (i % 5) * 0.07 }}
-                className="group relative rounded-xl overflow-hidden"
-                style={{ border: '1px solid var(--outline-variant)', boxShadow: '0 2px 8px rgba(0,0,0,.06)', aspectRatio: '4/3' }}>
-                <img
-                  src={img.src}
-                  alt={img.label}
-                  loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                <div className="absolute inset-0 flex items-end"
-                  style={{ background: 'linear-gradient(to top, rgba(7,28,44,.75) 0%, transparent 55%)' }}>
-                  <span style={{ padding: '8px 12px', fontSize: 11, fontWeight: 600, color: 'white', letterSpacing: '0.02em' }}>
-                    {img.label}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Compliance badges */}
-          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            {['WHO-GMP Certified', 'CDSCO Compliant', 'ISO 9001:2015', 'COA Verified Batches', 'Cold Chain Capable'].map(badge => (
-              <div key={badge} className="flex items-center gap-2 px-4 py-2 rounded-full"
-                style={{ background: 'var(--surface-container-low)', border: '1px solid var(--outline-variant)', fontSize: 12, fontWeight: 600, color: 'var(--on-surface-variant)' }}>
-                <span className="material-symbols-outlined" style={{ fontSize: 15, color: 'var(--tertiary)' }}>verified</span>
-                {badge}
-              </div>
-            ))}
+            <div style={{ marginTop: 12, borderRadius: 12, border: '1px solid var(--outline-variant)', background: 'var(--surface-container-lowest)', padding: '14px 20px', textAlign: 'center' }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--on-surface-variant)' }}>Unit No. 611, Reliables Pride, Anand Nagar, Opp. Heera Panna, Jogeshwari West, Mumbai 400102</span>
+            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* ── PRODUCT GALLERY SCROLL ── */}
+      <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
+        <div className="container-custom">
+          <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} className="text-center mb-10">
+            <span className="text-eyebrow text-primary uppercase font-bold">Our Products</span>
+            <h2 className="text-headline-lg text-on-surface mt-2" style={{ fontFamily: 'Manrope' }}>Product Gallery</h2>
+            <p className="text-body-md text-secondary mt-3">A glimpse of our 100+ pharmaceutical brands</p>
+          </motion.div>
+
+          <div style={{ position: 'relative' }}>
+            {/* Scroll container */}
+            <div
+              id="product-gallery-scroll"
+              style={{ display: 'flex', gap: 20, overflowX: 'auto', scrollBehavior: 'smooth', paddingBottom: 12, scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {products.slice(0, 10).map((p, i) => (
+                <motion.div key={p.slug}
+                  initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={VP} transition={{ delay: i * 0.06 }}
+                  style={{ flexShrink: 0, width: 260, borderRadius: 20, border: '1px solid var(--outline-variant)', background: 'var(--surface-container-lowest)', boxShadow: '0 4px 16px rgba(0,0,0,0.07)', overflow: 'hidden', transition: 'transform 0.3s, box-shadow 0.3s', cursor: 'pointer' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(7,152,208,0.15)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.07)'; }}
+                >
+                  <div style={{ height: 200, background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+                    <img src={p.image} alt={p.alt} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', transition: 'transform 0.4s' }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
+                      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    />
+                  </div>
+                  <div style={{ padding: '14px 16px' }}>
+                    <h3 style={{ fontSize: 14, fontWeight: 700, color: 'var(--on-surface)', marginBottom: 4 }}>{p.name}</h3>
+                    <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--primary)', background: 'var(--surface-container)', padding: '2px 8px', borderRadius: 20 }}>{p.category}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Scroll buttons */}
+            <button
+              onClick={() => document.getElementById('product-gallery-scroll').scrollBy({ left: -300, behavior: 'smooth' })}
+              style={{ position: 'absolute', left: -16, top: '45%', transform: 'translateY(-50%)', width: 40, height: 40, borderRadius: '50%', background: 'white', border: '1px solid var(--outline-variant)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: 20, color: 'var(--on-surface)' }}>chevron_left</span>
+            </button>
+            <button
+              onClick={() => document.getElementById('product-gallery-scroll').scrollBy({ left: 300, behavior: 'smooth' })}
+              style={{ position: 'absolute', right: -16, top: '45%', transform: 'translateY(-50%)', width: 40, height: 40, borderRadius: '50%', background: 'white', border: '1px solid var(--outline-variant)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: 20, color: 'var(--on-surface)' }}>chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* MANUFACTURING UNIT */}
+      <section style={{ background: '#060f1a' }}>
+
+        {/* Header */}
+        <div style={{ padding: '80px 24px 60px', textAlign: 'center' }}>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: '#7ee8fa', textTransform: 'uppercase', display: 'block', marginBottom: 12 }}>Our Facility</span>
+            <h2 style={{ fontFamily: 'Manrope', fontSize: 'clamp(30px,5vw,52px)', fontWeight: 900, color: 'white', lineHeight: 1.1, margin: '0 auto 16px' }}>Manufacturing Unit</h2>
+            <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 16, maxWidth: 480, margin: '0 auto' }}>
+              State-of-the-art facility under strict WHO-GMP and CDSCO guidelines.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Video */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.8, ease: [0.22,1,0.36,1] }}
+          style={{ maxWidth: 860, margin: '0 auto', padding: '0 20px 80px' }}
+        >
+          <div style={{ borderRadius: 24, overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,.7)', border: '1px solid rgba(255,255,255,.08)' }}>
+            <video controls autoPlay muted loop playsInline style={{ width: '100%', display: 'block' }}>
+              <source src="/ba9f1aa035.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
+
+        {/* Full-bleed image panels */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, padding: '0 24px 24px' }}>
+        {[
+          { src: '/tablet-manufacturing.webp',  label: 'Tablet Manufacturing',    sub: 'High-speed tablet press lines with automated inspection systems' },
+          { src: '/quality-control-lab.webp',   label: 'Quality Control Lab',     sub: 'Rigorous batch testing and analytical verification protocols' },
+          { src: '/research-development.webp',  label: 'Research and Development',sub: 'Formulation science and molecular innovation centre' },
+          { src: '/packaging-unit.webp',        label: 'Packaging Unit',          sub: 'Automated primary and secondary packaging lines' },
+          { src: '/sterile-production.webp',    label: 'Sterile Production',      sub: 'ISO Class 5 clean room for injectable manufacturing' },
+          { src: '/dispensing-area.webp',       label: 'Dispensing Area',         sub: 'Precision raw material weighing and dispensing booths' },
+          { src: '/blister-packing.webp',       label: 'Blister Packing',         sub: 'Alu-Alu and PVC blister sealing operations' },
+          { src: '/warehouse-storage.webp',     label: 'Warehouse and Storage',   sub: 'Temperature-controlled storage and logistics hub' },
+          { src: '/analytical-testing.webp',    label: 'Analytical Testing',      sub: 'HPLC, dissolution and stability testing equipment' },
+          { src: '/microbiology-lab.webp',      label: 'Microbiology Lab',        sub: 'Sterility testing and microbial limit analysis' },
+        ].map((img, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: 20, boxShadow: '0 20px 60px rgba(0,0,0,.5)' }}
+          >
+            <motion.img
+              src={img.src}
+              alt={img.label}
+              loading="lazy"
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              style={{ width: '100%', height: 'clamp(300px, 52vw, 680px)', objectFit: 'cover', display: 'block' }}
+            />
+            <div style={{
+              position: 'absolute', inset: 0, borderRadius: 20,
+              background: i % 2 === 0
+                ? 'linear-gradient(to right, rgba(6,15,26,.92) 0%, rgba(6,15,26,.55) 42%, rgba(6,15,26,.1) 100%)'
+                : 'linear-gradient(to left,  rgba(6,15,26,.92) 0%, rgba(6,15,26,.55) 42%, rgba(6,15,26,.1) 100%)',
+            }} />
+            <motion.div
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                position: 'absolute',
+                top: '50%', transform: 'translateY(-50%)',
+                left:  i % 2 === 0 ? 'clamp(24px, 7vw, 80px)' : 'auto',
+                right: i % 2 === 0 ? 'auto' : 'clamp(24px, 7vw, 80px)',
+                maxWidth: 'clamp(220px, 36vw, 440px)',
+                textAlign: i % 2 === 0 ? 'left' : 'right',
+              }}
+            >
+              <div style={{ width: 36, height: 3, borderRadius: 2, background: 'linear-gradient(90deg,#7ee8fa,#0798d0)', marginBottom: 14, marginLeft: i % 2 === 0 ? 0 : 'auto' }} />
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: '#7ee8fa', textTransform: 'uppercase', marginBottom: 10 }}>
+                {String(i + 1).padStart(2, '0')} / 10
+              </div>
+              <h3 style={{ fontFamily: 'Manrope', fontSize: 'clamp(20px, 3vw, 40px)', fontWeight: 900, color: 'white', lineHeight: 1.15, marginBottom: 12 }}>
+                {img.label}
+              </h3>
+              <p style={{ fontSize: 'clamp(12px, 1.2vw, 15px)', color: 'rgba(255,255,255,.65)', lineHeight: 1.7 }}>
+                {img.sub}
+              </p>
+            </motion.div>
+          </motion.div>
+        ))}
+        </div>
+
+        {/* Compliance strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.6 }}
+          style={{ padding: '56px 24px', display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center', borderTop: '1px solid rgba(255,255,255,.06)' }}
+        >
+          {['WHO-GMP Certified', 'CDSCO Compliant', 'ISO 9001:2015', 'COA Verified Batches', 'Cold Chain Capable'].map(b => (
+            <div key={b} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 22px', borderRadius: 100, background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,.7)' }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 15, color: '#7ee8fa' }}>verified</span>
+              {b}
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+
 
       {/* ── COMPANY INFO + OFFICE ── */}
       <section className="sp" style={{ background: 'var(--surface-container-lowest)', borderTop: '1px solid var(--outline-variant)' }}>
