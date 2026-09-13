@@ -200,7 +200,7 @@ export default function Home() {
             <img
               src="/images/products/elamus-logo.png"
               alt="Elamus Pharmaceuticals"
-              style={{ height: 80, width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)', marginBottom: 24 }}
+              style={{ height: 80, width: 'auto', objectFit: 'contain', mixBlendMode: 'screen', marginBottom: 24 }}
             />
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 16, maxWidth: 520, lineHeight: 1.7, marginBottom: 32 }}>
               Trusted pharmaceutical products for better healthcare access — made for generations.

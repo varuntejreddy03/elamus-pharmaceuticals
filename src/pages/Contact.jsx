@@ -95,8 +95,8 @@ export default function Contact() {
               <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--outline-variant)', boxShadow: '0 2px 8px rgba(0,0,0,.04)' }}>
                 <iframe
                   title="Elamus Pharmaceuticals Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.6!2d72.8377!3d19.1364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA4JzExLjAiTiA3MsKwNTAnMTUuNyJF!5e0!3m2!1sen!2sin!4v1600000000000"
-                  width="100%" height="200" style={{ border: 0, display: 'block' }} allowFullScreen loading="lazy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8567453159244!2d72.82986367450201!3d19.148568982070955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63f41eaaaab%3A0xe4d9267c646a17ea!2sUnit%20no%20611%2C%20Mumbai%20Co%20Working%2C%20Reliable%20pride%2C%20near%20Om%20Heera%20Panna%20Mall%2C%20Anand%20Nagar%2C%20Jogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400102!5e1!3m2!1sen!2sin!4v1789329244442!5m2!1sen!2sin"
+                  width="100%" height="260" style={{ border: 0, display: 'block' }} allowFullScreen loading="lazy"
                 />
               </div>
 
