@@ -264,7 +264,7 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <div style={{ background:'var(--surface-container-low)', borderTop:'1px solid var(--outline-variant)', borderBottom:'1px solid var(--outline-variant)', padding:'10px 0', overflow:'hidden' }}>
         <div className="ticker flex gap-6" style={{ width:'max-content' }}>
-          {[...products, ...products].map((p, i) => (
+          {[...products, ...products].filter(p => p.image).map((p, i) => (
             <div key={i} className="inline-flex items-center gap-2.5 shrink-0 px-3 py-1.5 rounded-lg"
               style={{ background:'var(--surface-container-lowest)', border:'1px solid var(--outline-variant)' }}>
               <img src={p.image} alt={p.name} style={{ width:28, height:28, objectFit:'contain' }} />
@@ -467,7 +467,7 @@ export default function Home() {
           <div style={{ overflow:'hidden', marginBottom:40, borderRadius:16, background:'rgba(255,255,255,.6)', border:'1px solid var(--outline-variant)', padding:'16px 0' }}>
             {/* Row 1 — left */}
             <div className="marquee-left flex gap-3 mb-3" style={{ width:'max-content' }}>
-              {[...products.slice(0,14), ...products.slice(0,14)].map((p, i) => (
+              {[...products.slice(0,14), ...products.slice(0,14)].filter(p => p.image).map((p, i) => (
                 <div key={`ml-${i}`} style={{ width:100, height:88, flexShrink:0, background:'var(--surface-container-lowest)', border:'1px solid var(--outline-variant)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', padding:10 }}>
                   <img src={p.image} alt={p.alt} style={{ width:'100%', height:'100%', objectFit:'contain' }} loading="lazy" />
                 </div>
@@ -475,7 +475,7 @@ export default function Home() {
             </div>
             {/* Row 2 — right */}
             <div className="marquee-right flex gap-3" style={{ width:'max-content' }}>
-              {[...products.slice(14,28), ...products.slice(14,28)].map((p, i) => (
+              {[...products.slice(14,28), ...products.slice(14,28)].filter(p => p.image).map((p, i) => (
                 <div key={`mr-${i}`} style={{ width:100, height:88, flexShrink:0, background:'var(--surface-container-lowest)', border:'1px solid var(--outline-variant)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', padding:10 }}>
                   <img src={p.image} alt={p.alt} style={{ width:'100%', height:'100%', objectFit:'contain' }} loading="lazy" />
                 </div>

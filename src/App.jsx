@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CartProvider } from './context/CartContext';
 import { useCart } from './context/CartContext';
@@ -11,6 +12,13 @@ import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import EnquiryCart from './pages/EnquiryCart';
 import Careers from './pages/Careers';
+
+/* ── Scroll to top on route change ── */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+  return null;
+}
 
 /* ── Page transition wrapper ── */
 const pageVariants = {
@@ -94,6 +102,7 @@ export default function App() {
   return (
     <CartProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <main>
           <AnimatedRoutes />

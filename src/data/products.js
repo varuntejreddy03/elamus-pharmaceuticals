@@ -152,7 +152,7 @@ const products = [
     name: 'DUBIFAST',
     composition: 'Pregabalin 75mg (SR) + Nortriptyline HCl 10mg + Mecobalamin 1500mcg Tablets',
     slug: 'dubifast',
-    image: '/images/products/Dubifast pg75 tablets .jpeg',
+    image: '/WhatsApp Image 2026-09-12 at 6.54.14 PM (2).jpeg',
     category: CAT_ORTHO,
   },
   {
@@ -282,14 +282,14 @@ const products = [
     name: 'ElmaRaft',
     composition: 'Sodium Alginate 150mg + Sodium Bicarbonate 133.5mg + Calcium Carbonate 80mg Oral Suspension',
     slug: 'elmaraft',
-    image: null,
+    image: '/WhatsApp Image 2026-09-15 at 1.31.52 PM.jpeg',
     category: CAT_GASTRO,
   },
   {
     name: 'ElmaRapid-IT',
     composition: 'Rabeprazole Sodium 20mg + Gastro Resistant & Itopride Hydrochloride 150mg (SR) Capsules',
     slug: 'elmarapid-it',
-    image: null,
+    image: '/WhatsApp Image 2026-09-15 at 1.36.38 PM.jpeg',
     category: CAT_GASTRO,
   },
   {

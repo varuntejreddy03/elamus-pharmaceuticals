@@ -140,12 +140,20 @@ export default function About() {
             <p className="text-body-md text-secondary mt-3 max-w-xl mx-auto">A professional workspace built for pharmaceutical excellence in the heart of Mumbai.</p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={VP} variants={fUp} transition={{ delay: 0.1 }}>
-            <div style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid var(--outline-variant)', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}>
-              <img
-                src="/images/products/office-new.jpeg"
-                alt="Elamus Pharmaceuticals Office and Conference Hall"
-                style={{ width: '100%', height: 'clamp(220px, 40vw, 520px)', objectFit: 'cover', display: 'block' }}
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { src: '/WhatsApp Image 2026-09-12 at 6.54.50 PM (1).jpeg', alt: 'Elamus Office - View 1' },
+                { src: '/WhatsApp Image 2026-09-12 at 6.54.51 PM.jpeg',     alt: 'Elamus Office - View 2' },
+                { src: '/WhatsApp Image 2026-09-12 at 6.54.50 PM (2).jpeg', alt: 'Elamus Office - View 3' },
+              ].map((img, i) => (
+                <div key={i} style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid var(--outline-variant)', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    style={{ width: '100%', height: 'clamp(200px, 30vw, 420px)', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+              ))}
             </div>
             <div style={{ marginTop: 12, borderRadius: 12, border: '1px solid var(--outline-variant)', background: 'var(--surface-container-lowest)', padding: '14px 20px', textAlign: 'center' }}>
               <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--on-surface-variant)' }}>Unit No. 611, Reliables Pride, Anand Nagar, Opp. Heera Panna, Jogeshwari West, Mumbai 400102</span>
