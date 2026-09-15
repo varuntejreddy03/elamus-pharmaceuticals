@@ -84,9 +84,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group" style={{ textDecoration: 'none' }}>
               <img
-                src="/images/products/elamus-logo.png"
+                src="/file_000000008a60820ab7da25a99228b042_3.jpg-removebg-preview.png"
                 alt="Elamus Pharmaceuticals"
-                style={{ height: 44, width: 'auto', objectFit: 'contain' }}
+                style={{ height: 64, width: 'auto', objectFit: 'contain' }}
               />
             </Link>
 
